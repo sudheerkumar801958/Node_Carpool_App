@@ -4,7 +4,7 @@ exports.createRide = async (req, res) => {
   try {
     const { origin, destination, date, availableSeats } = req.body;
     const ride = new Ride({
-      driver: req.user.userId,
+     // owner: req.body.email,
       origin,
       destination,
       date,
@@ -13,6 +13,7 @@ exports.createRide = async (req, res) => {
     await ride.save();
     res.status(201).json({ message: 'Ride created successfully' });
   } catch (err) {
+    console.log("err", err);
     res.status(400).json({ error: 'Failed to create ride' });
   }
 };
