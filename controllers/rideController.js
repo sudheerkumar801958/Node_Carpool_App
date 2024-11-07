@@ -4,7 +4,7 @@ exports.createRide = async (req, res) => {
   try {
     const { origin, destination, date, availableSeats } = req.body;
     const ride = new Ride({
-     // owner: req.body.email,
+      owner: req.body.email,
       origin,
       destination,
       date,

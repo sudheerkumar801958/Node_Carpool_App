@@ -5,7 +5,8 @@ const userSchema = new mongoose.Schema({
   contact: { type: Number, required: true},
   email: { type: String, required: true},
   password: { type: String, required: true },
-  usertype: { type: String, enum: ['offer', 'grab'], required: true }  // 'offer' for offering rides, 'grab' for looking to grab a ride
+  usertype: { type: String, enum: ['offer', 'grab'], required: true }, // 'offer' for offering rides, 'grab' for looking to grab a ride
+  profilepicture: { type: String, required: true },
 });
 
 module.exports = mongoose.model('User', userSchema);
